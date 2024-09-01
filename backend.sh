@@ -64,3 +64,7 @@ else
     rm rf /app/* #remove the existing code
     unzip /tmp/backend.zip &>>$LOG_FILE
     VALIDATE $? "extracting backend application code"
+
+    npm install &>>$LOG_FILE
+
+    cp /etc/systemd/system/backend.service
