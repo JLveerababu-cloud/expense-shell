@@ -68,3 +68,11 @@ else
     npm install &>>$LOG_FILE
 
     cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
+
+
+#load the data befprerunning backend
+
+dnf install mysql -y &>>$LOG_FILE
+VALIDATE $? "Installing mysql clint"
+
+mysql -h mysql.veerababu.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
