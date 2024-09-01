@@ -67,4 +67,4 @@ else
 
     npm install &>>$LOG_FILE
 
-    cp /etc/systemd/system/backend.service
+    cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
