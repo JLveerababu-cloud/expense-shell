@@ -61,5 +61,5 @@ else
    VALIDATE $? "downloading backend application code"
 
     cd /app
-    unzip /tmp/backend.zip
+    unzip /tmp/backend.zip &>>$LOG_FILE
     VALIDATE $? "extracting backend application code"
