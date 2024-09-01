@@ -76,3 +76,13 @@ dnf install mysql -y &>>$LOG_FILE
 VALIDATE $? "Installing mysql clint"
 
 mysql -h mysql.veerababu.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+
+systemctl daemon-reload &>>$LOG_FILE
+VALIDATE $? "daemon-reload"
+
+systemctl enable backend &>>$LOG_FILE
+VALIDATE $? "enable backend"
+
+
+systemctl restart backend &>>$LOG_FILE
+VALIDATE $? "restart backend"
