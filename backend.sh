@@ -43,5 +43,12 @@ VALIDATE $? "Install nodejs"
 
 id expense &>>$LOG_FILE
 
+if [ $? -ne 0 ]
+then 
+ echo -e "expense is not exists.. $G Creating $N"
+
 useradd expense &>>$LOG_FILE
-VALIDATE $? "Creating expense user"
+VALIDATE $?? "Creating expense user"
+else 
+   echo -e "expanse user alraedy exists.. $Y skipping $N"
+   fi
